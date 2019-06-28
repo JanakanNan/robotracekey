@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3d98aa0-50d9-4bf9-a284-5f0ae64fe168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Algorithms/keyListener.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms/keyListener.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/essai.py" beforeDir="false" afterPath="$PROJECT_DIR$/essai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supportMateriel/Hardware.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/supportMateriel/Hardware.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/keyList2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/keyList2.h" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,16 +186,15 @@
       <workItem from="1561623508070" duration="15791000" />
       <workItem from="1561662237228" duration="5348000" />
       <workItem from="1561721123841" duration="1963000" />
-      <workItem from="1561723621169" duration="4295000" />
+      <workItem from="1561723621169" duration="4448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27397000" />
+    <option name="totallyTimeSpent" value="27550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16595136" />
