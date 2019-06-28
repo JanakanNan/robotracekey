@@ -3,44 +3,75 @@
 
 /*PwmOut redled(D2);
 PwmOut greenled(D12);
-RangeFinder ranger(D3, 10, 5800.0, 100000);
-
-PwmOut pwmRight(D10);
-DigitalOut dirRight(D8);
-PwmOut pwmLeft(D9);
-DigitalOut dirLeft(D7);
-Serial pc(USBTX, USBRX);*/
+RangeFinder ranger(D3, 10, 5800.0, 100000);*/
 
 
-keyListener::listener(){
-    PwmOut redled(D2);
-    PwmOut greenled(D12);
-    RangeFinder ranger(D3, 10, 5800.0, 100000);
-    Serial pc(USBTX, USBRX);
+Serial pc(USBTX, USBRX);
 
-    PwmOut pwmRight(D10);
-    DigitalOut dirRight(D8);
-    PwmOut pwmLeft(D9);
-    DigitalOut dirLeft(D7);
+void keyListener::activate() {
+
+    //wait(1);
+    //actionMoteur->initHeadingDeg();
+    return;
 }
 
-void keyListener::listener(){
+
+char keyListener::listener(){
 
 
-
-
-    char c='z';
+    char c='a';
     while (1){
-        c='z';
+
+
+        c='a';
         if (pc.readable()) c=pc.getc();
 
-        if (c=='m') {
-            move();
-            continue;
+        if (c == 'z') {
+            moveAhead();
         }
 
-        wait(1);
+        if (c == 's') {
+            moveForward();
+        }
+
+        if (c == 'q') {
+            stepTurn(LEFT);
+        }
+
+        if (c == 'd') {
+            stepTurn(RIGHT);
+        }
+
+
+
     }
 
 }
+
+
+/*
+
+void keyListener::moveAhead(char c) {
+    if (c == 'z') {
+        moveAhead();
+    }
+}
+
+void keyListener::moveForward(char c) {
+    if (c == 's') {
+        moveForward();
+    }
+}
+
+void keyListener::stepTurn(int i) {
+    if (c == 'q') {
+        stepTurn(LEFT);
+    }
+}
+
+void keyListener::stepTurn(int i) {
+    if (c == 'd') {
+        stepTurn(RIGHT);
+    }
+}*/
 

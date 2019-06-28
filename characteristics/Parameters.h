@@ -1,10 +1,18 @@
 #include "mbed.h"
 #include "../RangeFinder.h"
 
+#define UP 0
+#define DOWN 1
+
+#define LEFT 0
+#define RIGHT 1
+
 
 class ServiceActionMoteur {
 public:
-    virtual void move()=0;
+    virtual void moveAhead()=0;
+    virtual void moveForward()=0;
+    virtual void stepTurn(int dir)=0;
 };
 
 class ServiceRequisActionMoteur {
@@ -24,7 +32,7 @@ public:
 
 class ServiceActionPasAPas {
 public:
-    virtual void step()=0;
+    //virtual void step()=0;
 };
 
 class ServiceRequisActionPasAPas {
@@ -37,7 +45,9 @@ public:
 class Hardware: public ServiceActionMoteur {
 public:
     Hardware();
-    void move();
+    void moveAhead();
+    void moveForward();
+    void stepTurn(int dir);
 };
 
 class keyListener: public ServiceRequisActionMoteur,
@@ -47,7 +57,13 @@ private:
     ServiceActionMoteur* actionMoteur;
 public:
     keyListener();
+    void activate();
+    //void step();
     void bindServiceActionMoteur(ServiceActionMoteur* service);
-    void move();
-    void listener();
+    void moveAhead();
+    void moveForward();
+    void stepTurn(int dir);
+    char listener();
+    void moveAhead(char c);
+    void moveForward(char c);
 };

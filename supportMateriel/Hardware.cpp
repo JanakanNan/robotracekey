@@ -8,13 +8,7 @@
 #define DELTA 200
 #define DELTATEMPS 0.4
 
-#define UP 0
-#define DOWN 1
 
-#define LEFTUP 0
-#define LEFTDOWN 1
-#define RIGHTUP 1
-#define RIGHTDOWN 0
 
 /*PwmOut redled(D2);
 PwmOut greenled(D12);
@@ -28,20 +22,47 @@ DigitalOut dirLeft(D7);
 Hardware::Hardware() {
     pwmRight.period_us(1000);
     pwmLeft.period_us(1000);
-    dirRight=RIGHTUP;
-    dirLeft=LEFTUP;
+    dirRight=1;
+    dirLeft=0;
     pwmRight.pulsewidth_us(0);
     pwmLeft.pulsewidth_us(0);
     wait(1);
 }
 
-void Hardware::move() {
-    dirRight=RIGHTUP;
-    dirLeft=LEFTUP;
+void Hardware::moveAhead() {
+    dirRight=1;
+    dirLeft=0;
     pwmRight.pulsewidth_us(300);
     pwmLeft.pulsewidth_us(300);
     wait(2);
     pwmRight.pulsewidth_us(0);
     pwmLeft.pulsewidth_us(0);
+    return;
+}
+
+void Hardware::moveForward(){
+    dirRight=0;
+    dirLeft=1;
+    pwmRight.pulsewidth_us(300);
+    pwmLeft.pulsewidth_us(300);
+    wait(2);
+    pwmRight.pulsewidth_us(0);
+    pwmLeft.pulsewidth_us(0);
+    return;
+
+}
+
+void Hardware::stepTurn(int dir) {
+    if (dir==1) {
+        dirLeft=0;
+        dirRight=0;
+        pwmLeft.pulsewidth_us(400);
+        pwmRight.pulsewidth_us(200);
+    } else {
+        dirLeft=1;
+        dirRight=1;
+        pwmLeft.pulsewidth_us(200);
+        pwmRight.pulsewidth_us(400);
+    }
     return;
 }

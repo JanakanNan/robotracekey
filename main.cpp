@@ -16,7 +16,18 @@
 
 int main() {
 
-    ServiceActionMoteur* hardware;
+
+
+    ServiceActionMoteur* hardware = new Hardware();
+
+
+
+    keyListener* Listener = new keyListener();
+
+    Listener->bindServiceActionMoteur(hardware);
+
+
+    Listener->listener();
 
 
 
