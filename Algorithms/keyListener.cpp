@@ -41,8 +41,7 @@ char keyListener::listener(){
         if (c == 'd') {
             stepTurn(RIGHT);
         }
-
-
+        
 
     }
 

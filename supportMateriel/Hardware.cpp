@@ -32,9 +32,9 @@ Hardware::Hardware() {
 void Hardware::moveAhead() {
     dirRight=1;
     dirLeft=0;
-    pwmRight.pulsewidth_us(300);
-    pwmLeft.pulsewidth_us(300);
-    wait(2);
+    pwmRight.pulsewidth_us(700);
+    pwmLeft.pulsewidth_us(700);
+    wait(0.1);
     pwmRight.pulsewidth_us(0);
     pwmLeft.pulsewidth_us(0);
     return;
@@ -43,9 +43,9 @@ void Hardware::moveAhead() {
 void Hardware::moveForward(){
     dirRight=0;
     dirLeft=1;
-    pwmRight.pulsewidth_us(300);
-    pwmLeft.pulsewidth_us(300);
-    wait(2);
+    pwmRight.pulsewidth_us(700);
+    pwmLeft.pulsewidth_us(700);
+    wait(0.1);
     pwmRight.pulsewidth_us(0);
     pwmLeft.pulsewidth_us(0);
     return;
@@ -58,11 +58,17 @@ void Hardware::stepTurn(int dir) {
         dirRight=0;
         pwmLeft.pulsewidth_us(400);
         pwmRight.pulsewidth_us(200);
+        wait(0.1);
+        pwmRight.pulsewidth_us(0);
+        pwmLeft.pulsewidth_us(0);
     } else {
         dirLeft=1;
         dirRight=1;
         pwmLeft.pulsewidth_us(200);
         pwmRight.pulsewidth_us(400);
+        wait(0.1);
+        pwmRight.pulsewidth_us(0);
+        pwmLeft.pulsewidth_us(0);
     }
     return;
 }
